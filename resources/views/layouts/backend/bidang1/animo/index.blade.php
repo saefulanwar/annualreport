@@ -9,10 +9,18 @@
     <section class="content-header">
       <h1>
         Animo
-        <small>Display All Animo</small>
+        <small>Display all animo</small>
       </h1>
       <ol class="breadcrumb">
-        <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+        <li>
+        <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
+        </li>
+        <li>
+        <a href="{{ route('animo.index') }}"> Animo</a>
+        </li>
+        <li class="active">
+        Display all animo
+        </li>
       </ol>
     </section>
 
@@ -20,9 +28,19 @@
     <section class="content">
         <div class="row">
           <div class="col-xs-12">
-            <div class="box">
+            <div class="box"> 
+            <div class="box-header">
+              <div class="pull-left">
+                <a href="{{ route('animo.create') }}" class="btn btn-success"> Add New</a>
+              </div>   
+            </div>        
               <!-- /.box-header -->
               <div class="box-body ">
+               @if(! $animo->count())
+                <div class="alert alert-danger">
+                  <strong>No record found</strong>
+                </div>
+                @else
                    <table class="table table-bordered">
                      <thead>
                        <tr>
@@ -41,7 +59,7 @@
                            <a href="{{ route('blog.edit', $data->id) }}" class="btn btn-xs btn-default">
                              <i class="fa fa-edit"></i>
                            </a>
-                           <a href="{{ route('blog.destroy', $data->id) }}" class="btn btn-xs btn-default">
+                           <a href="{{ route('blog.destroy', $data->id) }}" class="btn btn-xs btn-danger">
                              <i class="fa fa-times"></i>
                            </a>
                          </td>
@@ -54,6 +72,7 @@
                        
                      </tbody>
                    </table>
+                   @endif
               </div>
               <!-- /.box-body -->
               <div class="box-footer clearfix">
@@ -61,8 +80,7 @@
                     {{ $animo->links() }}
                 </div>
                 <div class="pull-right">
-                    <?php $postCount = $animo->count();?>
-                    <small>{{ $postCount }}{{ str_plural(' Item', $postCount) }}</small>
+                    <small>{{ $animoCount }}{{ str_plural(' Item', $animoCount) }}</small>
                 </div>
               </div>
             </div>
@@ -74,5 +92,11 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+@endsection
+
+@section('script')
+<script type="text/javascript">
+  $('ul.pagination').addClass('no-margin pagination-sm');
+</script>
 @endsection
 

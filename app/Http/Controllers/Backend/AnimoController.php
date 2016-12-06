@@ -16,8 +16,9 @@ class AnimoController extends Controller
      */
     public function index()
     {
-        $animo = Animo::paginate(10);
-        return view('layouts.backend.bidang1.animo.index', compact('animo'));
+        $animo = Animo::latest()->paginate(5);
+        $animoCount = Animo::count();
+        return view('layouts.backend.bidang1.animo.index', compact('animo','animoCount'));
     }
 
     /**
