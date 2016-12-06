@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
+
+Auth::routes();
+
+Route::get('/home', 'Backend\HomeController@index');
+
+Route::resource('/backend/blog', 'Backend\BlogController');
+Route::resource('/backend/animo', 'Backend\AnimoController');
+

@@ -136,6 +136,7 @@ return [
     */
 
     'providers' => [
+        Laratrust\LaratrustServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -192,7 +193,8 @@ return [
     */
 
     'aliases' => [
-
+        'Laratrust' => Laratrust\LaratrustFacade::class,
+        
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
