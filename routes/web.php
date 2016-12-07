@@ -82,7 +82,7 @@ Route::resource('/backend/tabel225', 'Backend\Tabel225Controller');
 Route::resource('/backend/tabel226', 'Backend\Tabel226Controller');
 Route::resource('/backend/tabel227', 'Backend\Tabel227Controller');
 Route::resource('/backend/tabel228', 'Backend\Tabel228Controller');
-
+//Bidang 3
 Route::resource('/backend/tabel31', 'Backend\Tabel31Controller');
 Route::resource('/backend/tabel32', 'Backend\Tabel32Controller');
 Route::resource('/backend/tabel33', 'Backend\Tabel33Controller');
@@ -90,4 +90,11 @@ Route::resource('/backend/tabel34', 'Backend\Tabel34Controller');
 Route::resource('/backend/tabel35', 'Backend\Tabel35Controller');
 Route::resource('/backend/tabel37', 'Backend\Tabel37Controller');
 Route::resource('/backend/tabel38', 'Backend\Tabel38Controller');
+//Bidang 4
+Route::resource('/backend/tabel41', 'Backend\Tabel41Controller');
+Route::resource('/backend/tabel42', 'Backend\Tabel42Controller');
+Route::resource('/backend/tabel43', 'Backend\Tabel43Controller');
+Route::resource('/backend/tabel44', 'Backend\Tabel44Controller');
+Route::resource('/backend/tabel46', 'Backend\Tabel46Controller');
+Route::resource('/backend/tabel47', 'Backend\Tabel47Controller');
 
