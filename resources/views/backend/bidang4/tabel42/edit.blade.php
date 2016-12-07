@@ -30,7 +30,7 @@
                   'id' => 'tabel42-form'
               ]) !!}
 
-              @include('backend.bidang3.tabel42.form')
+              @include('backend.bidang4.tabel42.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +41,4 @@
 
 @endsection
 
-@include('backend.bidang3.tabel42.script')
+@include('backend.bidang4.tabel42.script')

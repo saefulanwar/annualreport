@@ -26,20 +26,20 @@
                 <span class="help-block">{{ $errors->first('tamu') }}</span>
             @endif
         </div>
-        <div class="form-group {{ $errors->has('asal') ? 'has-error' : '' }}">
-            {!! Form::label('asal') !!}
-            {!! Form::text('asal', null, ['class' => 'form-control']) !!}
+        <div class="form-group {{ $errors->has('negara') ? 'has-error' : '' }}">
+            {!! Form::label('negara asal') !!}
+            {!! Form::text('negara', null, ['class' => 'form-control']) !!}
 
-            @if($errors->has('asal'))
-                <span class="help-block">{{ $errors->first('asal') }}</span>
+            @if($errors->has('negara'))
+                <span class="help-block">{{ $errors->first('negara') }}</span>
             @endif
         </div>
-        <div class="form-group {{ $errors->has('tanggal') ? 'has-error' : '' }}">
-            {!! Form::label('tanggal') !!}
-            {!! Form::text('tanggal', null, ['class' => 'form-control']) !!}
+        <div class="form-group {{ $errors->has('tanggal_pelaksanaan') ? 'has-error' : '' }}">
+            {!! Form::label('tanggal pelaksanaan') !!}
+            {!! Form::text('tanggal_pelaksanaan', null, ['class' => 'form-control']) !!}
 
-            @if($errors->has('tanggal'))
-                <span class="help-block">{{ $errors->first('tanggal') }}</span>
+            @if($errors->has('tanggal_pelaksanaan'))
+                <span class="help-block">{{ $errors->first('tanggal_pelaksanaan') }}</span>
             @endif
         </div>
         <div class="form-group {{ $errors->has('peserta') ? 'has-error' : '' }}">

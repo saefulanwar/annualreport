@@ -8,7 +8,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>        
-        Rekapitulasi Prestasi Mahasiswa
+        Partisipasi Pameran KDN
         <small>Add new</small>
       </h1>
       <ol class="breadcrumb">
@@ -16,7 +16,7 @@
         <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
         </li>
         <li>
-        <a href="{{ route('tabel32.index') }}"> tabel3.2</a>
+        <a href="{{ route('tabel41.index') }}"> tabel4.1</a>
         </li>
         <li class="active">
         Add new
@@ -27,14 +27,14 @@
     <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($tabel32, [
+              {!! Form::model($tabel41, [
                   'method' => 'POST',
-                  'route'  => 'tabel32.store',
+                  'route'  => 'tabel41.store',
                   'files'  => TRUE,
-                  'id' => 'tabel32-form'
+                  'id' => 'tabel41-form'
               ]) !!}
 
-              @include('backend.bidang3.tabel32.form')
+              @include('backend.bidang4.tabel41.form')
 
             {!! Form::close() !!}
           </div>
@@ -45,5 +45,5 @@
 
 @endsection
 
-@include('backend.bidang3.tabel32.script')
+@include('backend.bidang4.tabel41.script')
 

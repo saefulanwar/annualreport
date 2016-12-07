@@ -43,7 +43,7 @@
                             <strong>No record found</strong>
                         </div>
                     @else                       
-                        @include('backend.bidang3.tabel42.table')
+                        @include('backend.bidang4.tabel42.table')
                     @endif
               </div>
               <!-- /.box-body -->

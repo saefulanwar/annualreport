@@ -8,29 +8,29 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>          
-         Rekapitulasi Prestasi Mahasiswa
+         Partisipasi Pameran KDN
           <small>Edit data</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('tabel32.index') }}">tabel3.2</a></li>
-          <li class="active">Edit tabel3.2</li>
+          <li><a href="{{ route('tabel41.index') }}">tabel4.1</a></li>
+          <li class="active">Edit tabel4.1</li>
         </ol>
       </section>
 
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($tabel32, [
+              {!! Form::model($tabel41, [
                   'method' => 'PUT',
-                  'route'  => ['tabel32.update', $tabel32->id],
+                  'route'  => ['tabel41.update', $tabel41->id],
                   'files'  => TRUE,
-                  'id' => 'tabel32-form'
+                  'id' => 'tabel41-form'
               ]) !!}
 
-              @include('backend.bidang3.tabel32.form')
+              @include('backend.bidang4.tabel41.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +41,4 @@
 
 @endsection
 
-@include('backend.bidang3.tabel32.script')
+@include('backend.bidang4.tabel41.script')

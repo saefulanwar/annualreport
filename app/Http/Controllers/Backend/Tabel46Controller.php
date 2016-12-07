@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class Tabel46Controller extends Controller
+use App\Bidang4\Tabel46;
+class Tabel46Controller extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class Tabel46Controller extends Controller
      */
     public function index()
     {
-        //
+        $tabel46 = Tabel46::latest()->paginate(15);
+        $tabel46Count = Tabel46::count();
+        return view('backend.bidang4.tabel46.index', compact('tabel46','tabel46Count'));
     }
 
     /**
@@ -22,9 +24,9 @@ class Tabel46Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Tabel46 $tabel46)
     {
-        //
+        return view('backend.bidang4.tabel46.create', compact('tabel46'));
     }
 
     /**
@@ -35,7 +37,9 @@ class Tabel46Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tabel46::create($request->all());
+
+        return redirect('/backend/tabel46')->with('message', 'Your data was created successfully!');
     }
 
     /**
@@ -57,7 +61,8 @@ class Tabel46Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $tabel46 = Tabel46::findOrFail($id);
+        return view("backend.bidang4.tabel46.edit", compact('tabel46'));
     }
 
     /**
@@ -69,7 +74,9 @@ class Tabel46Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tabel46 = Tabel46::findOrFail($id);
+        $tabel46->update($request->all());
+        return redirect('/backend/tabel46')->with('message', 'Your data was updated successfully!');
     }
 
     /**
@@ -80,6 +87,8 @@ class Tabel46Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tabel46::findOrFail($id)->delete();
+
+        return redirect('/backend/tabel46')->with('error-message', 'Your data was deleted');
     }
 }
