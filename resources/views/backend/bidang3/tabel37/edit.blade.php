@@ -8,29 +8,30 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>          
-         Pengadaan Jasa Konstruksi
+        Rincian Data Mahasiswa UNY Penerima Beasiswa
+
           <small>Edit data</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('tabel25.index') }}">tabel2.5</a></li>
-          <li class="active">Edit tabel2.5</li>
+          <li><a href="{{ route('tabel37.index') }}">tabel3.7</a></li>
+          <li class="active">Edit tabel3.7</li>
         </ol>
       </section>
 
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($tabel25, [
+              {!! Form::model($tabel37, [
                   'method' => 'PUT',
-                  'route'  => ['tabel25.update', $tabel25->id],
+                  'route'  => ['tabel37.update', $tabel37->id],
                   'files'  => TRUE,
-                  'id' => 'tabel25-form'
+                  'id' => 'tabel37-form'
               ]) !!}
 
-              @include('backend.bidang2.tabel25.form')
+              @include('backend.bidang3.tabel37.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +42,4 @@
 
 @endsection
 
-@include('backend.bidang2.tabel25.script')
+@include('backend.bidang3.tabel37.script')

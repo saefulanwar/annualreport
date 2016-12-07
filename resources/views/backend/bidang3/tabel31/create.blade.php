@@ -8,7 +8,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>        
-        Pengadaan Jasa Konstruksi
+        Rekapitulasi Mahasiswa Penerima Penghargaan Prestasi Mahasiswa Berdasarkan Bidang Pembinaan
         <small>Add new</small>
       </h1>
       <ol class="breadcrumb">
@@ -16,7 +16,7 @@
         <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
         </li>
         <li>
-        <a href="{{ route('tabel25.index') }}"> tabel2.25</a>
+        <a href="{{ route('tabel31.index') }}"> tabel3.1</a>
         </li>
         <li class="active">
         Add new
@@ -27,14 +27,14 @@
     <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($tabel25, [
+              {!! Form::model($tabel31, [
                   'method' => 'POST',
-                  'route'  => 'tabel25.store',
+                  'route'  => 'tabel31.store',
                   'files'  => TRUE,
-                  'id' => 'tabel25-form'
+                  'id' => 'tabel31-form'
               ]) !!}
 
-              @include('backend.bidang2.tabel25.form')
+              @include('backend.bidang3.tabel31.form')
 
             {!! Form::close() !!}
           </div>
@@ -45,5 +45,5 @@
 
 @endsection
 
-@include('backend.bidang2.tabel25.script')
+@include('backend.bidang3.tabel31.script')
 

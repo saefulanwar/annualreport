@@ -8,7 +8,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>        
-      Pengadaan Jasa Konstruksi
+      Rincian Proposal PKM yang Didanai Ditjen Dikti Berdasarkan Jenis PKM dan Asal Fakultas
         <small>Display all data</small>
       </h1>
       <ol class="breadcrumb">
@@ -16,7 +16,7 @@
         <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
         </li>
         <li>
-        <a href="{{ route('tabel25.index') }}"> tabel2.5</a>
+        <a href="{{ route('tabel33.index') }}"> tabel3.3</a>
         </li>
         <li class="active">
         Display all data
@@ -31,28 +31,28 @@
             <div class="box"> 
             <div class="box-header">
               <div class="pull-left">
-                <a href="{{ route('tabel25.create') }}" class="btn btn-success"><i class="fa fa-pencil"></i> Add New</a>
+                <a href="{{ route('tabel33.create') }}" class="btn btn-success"><i class="fa fa-pencil"></i> Add New</a>
               </div>   
             </div>        
               <!-- /.box-header -->
               <div class="box-body ">
                @include('backend.partials.message')
 
-                    @if (! $tabel25->count())
+                    @if (! $tabel33->count())
                         <div class="alert alert-danger">
                             <strong>No record found</strong>
                         </div>
                     @else                       
-                        @include('backend.bidang2.tabel25.table')
+                        @include('backend.bidang3.tabel33.table')
                     @endif
               </div>
               <!-- /.box-body -->
               <div class="box-footer clearfix">
                 <div class="pull-left">
-                    {{ $tabel225->links() }}
+                    {{ $tabel233->links() }}
                 </div>
                 <div class="pull-right">
-                    <small>{{ $tabel25Count }}{{ str_plural(' Item', $tabel25Count) }}</small>
+                    <small>{{ $tabel33Count }}{{ str_plural(' Item', $tabel33Count) }}</small>
                 </div>
               </div>
             </div>

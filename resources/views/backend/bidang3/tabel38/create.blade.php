@@ -8,15 +8,15 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>        
-        Pengadaan Jasa Konstruksi
-        <small>Add new</small>
+      Klaim Asuransi dan Dana Kesejahteraan Kesehatan Mahasiswa UNY
+      <small>Add new</small>
       </h1>
       <ol class="breadcrumb">
         <li>
         <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
         </li>
         <li>
-        <a href="{{ route('tabel25.index') }}"> tabel2.25</a>
+        <a href="{{ route('tabel38.index') }}"> tabel3.8</a>
         </li>
         <li class="active">
         Add new
@@ -27,14 +27,14 @@
     <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($tabel25, [
+              {!! Form::model($tabel38, [
                   'method' => 'POST',
-                  'route'  => 'tabel25.store',
+                  'route'  => 'tabel38.store',
                   'files'  => TRUE,
-                  'id' => 'tabel25-form'
+                  'id' => 'tabel38-form'
               ]) !!}
 
-              @include('backend.bidang2.tabel25.form')
+              @include('backend.bidang3.tabel38.form')
 
             {!! Form::close() !!}
           </div>
@@ -45,5 +45,5 @@
 
 @endsection
 
-@include('backend.bidang2.tabel25.script')
+@include('backend.bidang3.tabel38.script')
 

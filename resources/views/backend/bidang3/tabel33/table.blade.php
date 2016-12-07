@@ -2,18 +2,22 @@
                      <thead>
                        <tr>
                          <th width="80">Action</td>
-                         <th>Nama</td>
-                         <th>Kontrak</th>
-                         <th>Tahun</th>
+                         <th>Tahun</td>
+                         <th>Fakultas</th>
+                         <th>PKMK</th>
+                         <th>PKMKC</td>
+                         <th>PKMM</th>
+                         <th>PKMP</th>
+                         <th>PKMT</th>
                        </tr>
                      </thead>
                      <tbody>
 
-                      @foreach($tabel25 as $data)
+                      @foreach($tabel33 as $data)
                       <tr>
                         <td>
-                              {!! Form::open(['method' => 'DELETE', 'route' => ['tabel25.destroy', $data->id]]) !!}
-                                  <a href="{{ route('tabel25.edit', $data->id) }}" class="btn btn-xs btn-default">
+                              {!! Form::open(['method' => 'DELETE', 'route' => ['tabel33.destroy', $data->id]]) !!}
+                                  <a href="{{ route('tabel33.edit', $data->id) }}" class="btn btn-xs btn-default">
                                       <i class="fa fa-edit"></i>
                                   </a>
                                   <button type="submit" class="btn btn-xs btn-danger">
@@ -21,9 +25,13 @@
                                   </button>
                               {!! Form::close() !!}
                         </td>
-                         <td>{{ $data->nama}}</td>                         
-                         <td>{{ $data->kontrak }}</td>
-                         <td>{{ $data->tahun }}</td>
+                         <td>{{ $data->tahun}}</td>                         
+                         <td>{{ $data->fakultas }}</td>
+                         <td>{{ $data->pkmk }}</td>
+                         <td>{{ $data->pkmkc}}</td>                         
+                         <td>{{ $data->pkmm }}</td>
+                         <td>{{ $data->pkmp }}</td>
+                         <td>{{ $data->pkmt }}</td> 
                        </tr>
                       @endforeach
                        

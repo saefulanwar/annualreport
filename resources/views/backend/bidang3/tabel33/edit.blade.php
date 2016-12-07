@@ -8,29 +8,29 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>          
-         Pengadaan Jasa Konstruksi
+         Rincian Proposal PKM yang Didanai Ditjen Dikti Berdasarkan Jenis PKM dan Asal Fakultas
           <small>Edit data</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('tabel25.index') }}">tabel2.5</a></li>
-          <li class="active">Edit tabel2.5</li>
+          <li><a href="{{ route('tabel33.index') }}">tabel3.3</a></li>
+          <li class="active">Edit tabel3.3</li>
         </ol>
       </section>
 
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($tabel25, [
+              {!! Form::model($tabel33, [
                   'method' => 'PUT',
-                  'route'  => ['tabel25.update', $tabel25->id],
+                  'route'  => ['tabel33.update', $tabel33->id],
                   'files'  => TRUE,
-                  'id' => 'tabel25-form'
+                  'id' => 'tabel33-form'
               ]) !!}
 
-              @include('backend.bidang2.tabel25.form')
+              @include('backend.bidang3.tabel33.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +41,4 @@
 
 @endsection
 
-@include('backend.bidang2.tabel25.script')
+@include('backend.bidang3.tabel33.script')

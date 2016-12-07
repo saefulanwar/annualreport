@@ -1,16 +1,7 @@
 <div class="col-xs-12">
   <div class="box">
     <div class="box-body ">
-        <div class="form-group {{ $errors->has('nama') ? 'has-error' : '' }}">
-            {!! Form::label('nama') !!}
-            {!! Form::text('nama', null, ['class' => 'form-control']) !!}
-
-            @if($errors->has('nama'))
-                <span class="help-block">{{ $errors->first('nama') }}</span>
-            @endif
-        </div>
-
-        <div class="form-group {{ $errors->has('tahun') ? 'has-error' : '' }}">
+    <div class="form-group {{ $errors->has('tahun') ? 'has-error' : '' }}">
             {!! Form::label('tahun') !!}
             {!! Form::text('tahun', null, ['class' => 'form-control']) !!}
 
@@ -18,14 +9,24 @@
                 <span class="help-block">{{ $errors->first('tahun') }}</span>
             @endif
         </div>
-        <div class="form-group {{ $errors->has('kontrak') ? 'has-error' : '' }}">
-            {!! Form::label('kontrak') !!}
-            {!! Form::text('kontrak', null, ['class' => 'form-control']) !!}
+        <div class="form-group {{ $errors->has('premi') ? 'has-error' : '' }}">
+            {!! Form::label('premi') !!}
+            {!! Form::text('premi', null, ['class' => 'form-control']) !!}
 
-            @if($errors->has('kontrak'))
-                <span class="help-block">{{ $errors->first('kontrak') }}</span>
+            @if($errors->has('premi'))
+                <span class="help-block">{{ $errors->first('premi') }}</span>
             @endif
         </div>
+
+        <div class="form-group {{ $errors->has('klaim') ? 'has-error' : '' }}">
+            {!! Form::label('klaim') !!}
+            {!! Form::text('klaim', null, ['class' => 'form-control']) !!}
+
+            @if($errors->has('klaim'))
+                <span class="help-block">{{ $errors->first('klaim') }}</span>
+            @endif
+        </div>
+       
                
         <div class="box-footer clearfix">
             <div class="pull-left">

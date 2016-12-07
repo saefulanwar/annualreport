@@ -2,18 +2,20 @@
                      <thead>
                        <tr>
                          <th width="80">Action</td>
-                         <th>Nama</td>
-                         <th>Kontrak</th>
-                         <th>Tahun</th>
+                         <th>Tahun</td>
+                         <th>Fakultas</th>
+                         <th>Nama</th>
+                         <th>Jenjang</td>
+                         <th>Peringkat</th>
                        </tr>
                      </thead>
                      <tbody>
 
-                      @foreach($tabel25 as $data)
+                      @foreach($tabel35 as $data)
                       <tr>
                         <td>
-                              {!! Form::open(['method' => 'DELETE', 'route' => ['tabel25.destroy', $data->id]]) !!}
-                                  <a href="{{ route('tabel25.edit', $data->id) }}" class="btn btn-xs btn-default">
+                              {!! Form::open(['method' => 'DELETE', 'route' => ['tabel35.destroy', $data->id]]) !!}
+                                  <a href="{{ route('tabel35.edit', $data->id) }}" class="btn btn-xs btn-default">
                                       <i class="fa fa-edit"></i>
                                   </a>
                                   <button type="submit" class="btn btn-xs btn-danger">
@@ -21,9 +23,11 @@
                                   </button>
                               {!! Form::close() !!}
                         </td>
-                         <td>{{ $data->nama}}</td>                         
-                         <td>{{ $data->kontrak }}</td>
-                         <td>{{ $data->tahun }}</td>
+                         <td>{{ $data->tahun}}</td>                         
+                         <td>{{ $data->fakultas }}</td>
+                         <td>{{ $data->nama }}</td>
+                         <td>{{ $data->jenjang}}</td>                         
+                         <td>{{ $data->peringkat }}</td>
                        </tr>
                       @endforeach
                        

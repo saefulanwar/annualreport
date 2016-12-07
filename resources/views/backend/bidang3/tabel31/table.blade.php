@@ -2,18 +2,20 @@
                      <thead>
                        <tr>
                          <th width="80">Action</td>
-                         <th>Nama</td>
-                         <th>Kontrak</th>
                          <th>Tahun</th>
+                         <th>Penalaran</td>
+                         <th>Seni</th>
+                         <th>Khusus</th>
+                         <th>Olahraga</th>
                        </tr>
                      </thead>
                      <tbody>
 
-                      @foreach($tabel25 as $data)
+                      @foreach($tabel31 as $data)
                       <tr>
                         <td>
-                              {!! Form::open(['method' => 'DELETE', 'route' => ['tabel25.destroy', $data->id]]) !!}
-                                  <a href="{{ route('tabel25.edit', $data->id) }}" class="btn btn-xs btn-default">
+                              {!! Form::open(['method' => 'DELETE', 'route' => ['tabel31.destroy', $data->id]]) !!}
+                                  <a href="{{ route('tabel31.edit', $data->id) }}" class="btn btn-xs btn-default">
                                       <i class="fa fa-edit"></i>
                                   </a>
                                   <button type="submit" class="btn btn-xs btn-danger">
@@ -21,9 +23,11 @@
                                   </button>
                               {!! Form::close() !!}
                         </td>
-                         <td>{{ $data->nama}}</td>                         
-                         <td>{{ $data->kontrak }}</td>
-                         <td>{{ $data->tahun }}</td>
+                         <td>{{ $data->tahun}}</td>                         
+                         <td>{{ $data->penalaran }}</td>
+                         <td>{{ $data->seni }}</td>
+                         <td>{{ $data->khusus }}</td>
+                         <td>{{ $data->olahraga }}</td>
                        </tr>
                       @endforeach
                        
