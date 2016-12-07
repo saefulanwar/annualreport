@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -136,6 +136,7 @@ return [
     */
 
     'providers' => [
+        Barryvdh\Debugbar\ServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
 
         /*
@@ -178,6 +179,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -193,6 +195,7 @@ return [
     */
 
     'aliases' => [
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Laratrust' => Laratrust\LaratrustFacade::class,
         
         'App' => Illuminate\Support\Facades\App::class,
@@ -227,6 +230,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Bidang1\Animo;
 
-class AnimoController extends Controller
+class AnimoController extends BackendController
 {
     
     /**
@@ -16,9 +16,9 @@ class AnimoController extends Controller
      */
     public function index()
     {
-        $animo = Animo::latest()->paginate(5);
+        $animo = Animo::latest()->orderBy('tahun','asc')->paginate(15);
         $animoCount = Animo::count();
-        return view('layouts.backend.bidang1.animo.index', compact('animo','animoCount'));
+        return view('backend.bidang1.animo.index', compact('animo','animoCount'));
     }
 
     /**
@@ -26,9 +26,9 @@ class AnimoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Animo $animo)
     {
-        //
+        return view('backend.bidang1.animo.create', compact('animo'));
     }
 
     /**
@@ -39,7 +39,10 @@ class AnimoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Animo::create($request->all());
+
+        return redirect('/backend/animo')->with('message', 'Your data was created successfully!');
     }
 
     /**
@@ -61,7 +64,8 @@ class AnimoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $animo = Animo::findOrFail($id);
+        return view("backend.bidang1.animo.edit", compact('animo'));
     }
 
     /**
@@ -73,7 +77,9 @@ class AnimoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $animo = Animo::findOrFail($id);
+        $animo->update($request->all());
+        return redirect('/backend/animo')->with('message', 'Your animo was updated successfully!');
     }
 
     /**
@@ -84,6 +90,8 @@ class AnimoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Animo::findOrFail($id)->delete();
+
+        return redirect('/backend/animo')->with('error-message', 'Your animo was deleted');
     }
 }

@@ -3,11 +3,11 @@
 @section('content')
 <div class="login-box">
   <div class="login-logo">
-    <a href="/"><b>Laporan</b>Universitas</a>
+    <a href="/"><i class="fa fa-book"></i><b> UNY</b>REPORT</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your application</p>
+    <p class="login-box-msg"><i class="fa fa-key"></i> Sign in to start your application</p>
 
     <form method="POST" action="{{ url('/login') }}">
     {{ csrf_field() }}
