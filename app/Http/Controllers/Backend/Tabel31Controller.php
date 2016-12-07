@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Bidang3\Tabel31;
 
-class Tabel31Controller extends Controller
+class Tabel31Controller extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class Tabel31Controller extends Controller
      */
     public function index()
     {
-        //
+        $tabel31 = Tabel31::latest()->orderBy('tahun','asc')->paginate(15);
+        $tabel31Count = Tabel31::count();
+        return view('backend.bidang3.tabel31.index', compact('tabel31','tabel31Count'));
     }
 
     /**
@@ -22,9 +25,9 @@ class Tabel31Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Tabel31 $tabel31)
     {
-        //
+        return view('backend.bidang3.tabel31.create', compact('tabel31'));
     }
 
     /**
@@ -35,7 +38,9 @@ class Tabel31Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tabel31::create($request->all());
+
+        return redirect('/backend/tabel31')->with('message', 'Your data was created successfully!');
     }
 
     /**
@@ -57,7 +62,8 @@ class Tabel31Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $tabel31 = Tabel31::findOrFail($id);
+        return view("backend.bidang3.tabel31.edit", compact('tabel31'));
     }
 
     /**
@@ -69,7 +75,9 @@ class Tabel31Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tabel31 = Tabel31::findOrFail($id);
+        $tabel31->update($request->all());
+        return redirect('/backend/tabel31')->with('message', 'Your data was updated successfully!');
     }
 
     /**
@@ -80,6 +88,8 @@ class Tabel31Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tabel31::findOrFail($id)->delete();
+
+        return redirect('/backend/tabel31')->with('error-message', 'Your data was deleted');
     }
 }

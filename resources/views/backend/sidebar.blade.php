@@ -283,7 +283,10 @@
                       <a href="{{ url('/backend/tabel43') }}"><i class="fa fa-circle-o"></i> Tabel 4.3 Kegiatan dalam Rangka Internasionalisasi Prodi</a>
                   </li>
                   <li class="treeview">
-                      <a href="{{ url('/backend/tabel46') }}"><i class="fa fa-circle-o"></i> Tabel 4.6 Kegiatan guest lecturing </a>
+                      <a href="{{ url('/backend/tabel44') }}"><i class="fa fa-circle-o"></i> Tabel 4.4 Kegiatan guest lecturing </a>
+                  </li>
+                  <li class="treeview">
+                      <a href="{{ url('/backend/tabel46') }}"><i class="fa fa-circle-o"></i> Tabel 4.6 Kegiatan pre departure training </a>
                   </li>
                   <li class="treeview">
                       <a href="{{ url('/backend/tabel47') }}"><i class="fa fa-circle-o"></i> Tabel 4.7 MoU Kerja sama Luar Negeri</a>

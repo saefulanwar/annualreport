@@ -49,7 +49,7 @@
               <!-- /.box-body -->
               <div class="box-footer clearfix">
                 <div class="pull-left">
-                    {{ $tabel232->links() }}
+                    {{ $tabel32->links() }}
                 </div>
                 <div class="pull-right">
                     <small>{{ $tabel32Count }}{{ str_plural(' Item', $tabel32Count) }}</small>

@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Bidang3\Tabel37;
 
-class Tabel37Controller extends Controller
+class Tabel37Controller extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class Tabel37Controller extends Controller
      */
     public function index()
     {
-        //
+        $tabel37 = Tabel37::latest()->orderBy('tahun','asc')->paginate(15);
+        $tabel37Count = Tabel37::count();
+        return view('backend.bidang3.tabel37.index', compact('tabel37','tabel37Count'));
     }
 
     /**
@@ -22,9 +25,9 @@ class Tabel37Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Tabel37 $tabel37)
     {
-        //
+        return view('backend.bidang3.tabel37.create', compact('tabel37'));
     }
 
     /**
@@ -35,7 +38,9 @@ class Tabel37Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tabel37::create($request->all());
+
+        return redirect('/backend/tabel37')->with('message', 'Your data was created successfully!');
     }
 
     /**
@@ -57,7 +62,8 @@ class Tabel37Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $tabel37 = Tabel37::findOrFail($id);
+        return view("backend.bidang3.tabel37.edit", compact('tabel37'));
     }
 
     /**
@@ -69,7 +75,9 @@ class Tabel37Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tabel37 = Tabel37::findOrFail($id);
+        $tabel37->update($request->all());
+        return redirect('/backend/tabel37')->with('message', 'Your data was updated successfully!');
     }
 
     /**
@@ -80,6 +88,8 @@ class Tabel37Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tabel37::findOrFail($id)->delete();
+
+        return redirect('/backend/tabel37')->with('error-message', 'Your data was deleted');
     }
 }

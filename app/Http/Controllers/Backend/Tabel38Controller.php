@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Bidang3\Tabel38;
 
-class Tabel38Controller extends Controller
+class Tabel38Controller extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class Tabel38Controller extends Controller
      */
     public function index()
     {
-        //
+        $tabel38 = Tabel38::latest()->orderBy('tahun','asc')->paginate(15);
+        $tabel38Count = Tabel38::count();
+        return view('backend.bidang3.tabel38.index', compact('tabel38','tabel38Count'));
     }
 
     /**
@@ -22,9 +25,9 @@ class Tabel38Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Tabel38 $tabel38)
     {
-        //
+        return view('backend.bidang3.tabel38.create', compact('tabel38'));
     }
 
     /**
@@ -35,7 +38,9 @@ class Tabel38Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tabel38::create($request->all());
+
+        return redirect('/backend/tabel38')->with('message', 'Your data was created successfully!');
     }
 
     /**
@@ -57,7 +62,8 @@ class Tabel38Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $tabel38 = Tabel38::findOrFail($id);
+        return view("backend.bidang3.tabel38.edit", compact('tabel38'));
     }
 
     /**
@@ -69,7 +75,9 @@ class Tabel38Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tabel38 = Tabel38::findOrFail($id);
+        $tabel38->update($request->all());
+        return redirect('/backend/tabel38')->with('message', 'Your data was updated successfully!');
     }
 
     /**
@@ -80,6 +88,8 @@ class Tabel38Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tabel38::findOrFail($id)->delete();
+
+        return redirect('/backend/tabel38')->with('error-message', 'Your data was deleted');
     }
 }

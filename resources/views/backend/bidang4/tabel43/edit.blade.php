@@ -8,29 +8,29 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>          
-         Rekapitulasi Mahasiswa Penerima Penghargaan Prestasi Mahasiswa Berdasarkan Bidang Pembinaan
+         Kegiatan dalam Rangka Internasionalisasi Prodi
           <small>Edit data</small>
         </h1>
         <ol class="breadcrumb">
           <li>
               <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
           </li>
-          <li><a href="{{ route('tabel31.index') }}">tabel3.1</a></li>
-          <li class="active">Edit tabel3.1</li>
+          <li><a href="{{ route('tabel43.index') }}">tabel4.3</a></li>
+          <li class="active">Edit tabel4.3</li>
         </ol>
       </section>
 
       <!-- Main content -->
       <section class="content">
           <div class="row">
-              {!! Form::model($tabel31, [
+              {!! Form::model($tabel43, [
                   'method' => 'PUT',
-                  'route'  => ['tabel31.update', $tabel31->id],
+                  'route'  => ['tabel43.update', $tabel43->id],
                   'files'  => TRUE,
-                  'id' => 'tabel31-form'
+                  'id' => 'tabel43-form'
               ]) !!}
 
-              @include('backend.bidang3.tabel31.form')
+              @include('backend.bidang4.tabel43.form')
 
             {!! Form::close() !!}
           </div>
@@ -41,4 +41,4 @@
 
 @endsection
 
-@include('backend.bidang3.tabel31.script')
+@include('backend.bidang4.tabel43.script')
