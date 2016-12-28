@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Bidang1\Dayatampung;
+use Auth;
+use Excel;
 
 class DayatampungController extends BackendController
 {
@@ -91,5 +93,43 @@ class DayatampungController extends BackendController
         Dayatampung::findOrFail($id)->delete();
 
         return redirect('/backend/dayatampung')->with('error-message', 'Your dayatampung was deleted');
+    }
+
+    public function export()
+    {
+    return view('backend.bidang1.dayatampung.export');
+    }
+
+    public function exportPostData(Request $request)
+    {
+    // validasi
+    $this->validate($request, [
+    'tahun'=>'required',
+    ], [
+    'tahun.required'=>'Anda belum memilih tahun. Pilih minimal 1 tahun.'
+    ]);
+    $datas = Dayatampung::whereIn('id', $request->get('tahun'))->get();
+    Excel::create('Data Daya Tampung', function($excel) use ($datas) {
+    // Set property
+    $excel->setTitle('Data Daya Tampung')
+    ->setCreator(Auth::user()->name);
+    $excel->sheet('Data Daya Tampung', function($sheet) use ($datas) {
+    $row = 1;
+    $sheet->row($row, [
+    'Tahun',
+    'D3,S1',
+    'S2',
+    'S3'
+    ]);
+    foreach ($datas as $data) {
+    $sheet->row(++$row, [
+    $data->tahun,
+    $data->s1,
+    $data->s2,
+    $data->s3
+    ]);
+    }
+    });
+    })->export('xls');
     }
 }

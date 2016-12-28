@@ -44,6 +44,10 @@ Route::resource('/backend/tabel120', 'Backend\Tabel120Controller');
 Route::resource('/backend/tabel121', 'Backend\Tabel121Controller');
 Route::resource('/backend/tabel122', 'Backend\Tabel122Controller');
 Route::resource('/backend/tabel129', 'Backend\Tabel129Controller');
+// Route::get('/tabel129_export_fakultas', 'Tabel129Controller@exportDataFakultas');
+// Route::get('/tabel129_export', 'Tabel129Controller@exportData');
+// Route::post('/export_data_fakultas', 'Tabel129Controller@exportPostData');
+
 Route::resource('/backend/tabel130', 'Backend\Tabel130Controller');
 Route::resource('/backend/tabel131', 'Backend\Tabel131Controller');
 Route::resource('/backend/tabel132', 'Backend\Tabel132Controller');
@@ -97,4 +101,18 @@ Route::resource('/backend/tabel43', 'Backend\Tabel43Controller');
 Route::resource('/backend/tabel44', 'Backend\Tabel44Controller');
 Route::resource('/backend/tabel46', 'Backend\Tabel46Controller');
 Route::resource('/backend/tabel47', 'Backend\Tabel47Controller');
+
+//config
+Route::resource('/backend/permission', 'Config\PermissionController');
+Route::resource('/backend/role', 'Config\RoleController');
+Route::resource('/backend/user', 'Config\UserController');
+
+Route::resource('/backend/navigation-tree-view', 'Config\NavigationController');
+
+/*** export data **/ 
+//daya tampung
+Route::get('/backend/exportdytampung', 'Backend\DayatampungController@export');
+Route::post('/backend/exportdytampung', 'Backend\DayatampungController@exportPostData');
+
+
 

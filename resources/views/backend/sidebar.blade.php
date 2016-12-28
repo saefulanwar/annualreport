@@ -44,6 +44,14 @@
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
+
+{{--             "<ul id="browser" class="treeview-menu">
+            <li class="tree-view"<a href="#">Master</a>
+            <ul>
+            <li class="tree-view"><a class="tree-name">Sub Menu 1</a></li><li class="tree-view"><a class="tree-name">Sub Menu 2</a></li>
+            </ul>
+            <ul>" --}}
+              @role(['admin','informasi']) 
               <ul class="treeview-menu">
                   <li class="treeview">
                     <a href="#"><i class="fa fa-circle-o"></i> Tabel 1.1 Perkembangan Jumlah Mhs</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -97,7 +105,7 @@
                    <a href="{{ url('backend/tabel118') }}"><i class="fa fa-circle-o"></i> Tabel 1.18 Jumlah Guru Besar Baru UNY</a>
                 </li>
                 <li class="treeview">
-                    <a href="{{ url('backend/tabel119') }}"><i class="fa fa-circle-o"></i> Tabel 1.19 Jumlah Dosen yang Difasilit</a>
+                    <a href="{{ url('backend/tabel119') }}"><i class="fa fa-circle-o"></i> Tabel 1.19 Jumlah Dosen yang Difasilitasi</a>
                 </li>
                 <li class="treeview">
                     <a href="{{ url('backend/tabel120') }}"><i class="fa fa-circle-o"></i> Tabel 1.20 Daftar Nama Dosen yang Mendapatkan Insentif Seminar Nasional/Internasional</a>
@@ -108,9 +116,13 @@
                 <li class="treeview">
                     <a href="{{ url('backend/tabel122') }}"><i class="fa fa-circle-o"></i> Tabel 1.22 Data Rekapitulasi Pelatihan Luar Negeri Non Gelar</a>
                 </li>
+                @endrole
+                @role(['admin','informasi','fakultas']) 
                 <li class="treeview">
                     <a href="{{ url('backend/tabel129') }}"><i class="fa fa-circle-o"></i> Tabel 1.29 Acara Seminar dan/atau Internasional</a>
-                </li>   
+                </li> 
+                @endrole
+                @role(['admin','informasi'])   
                 <li class="treeview">
                     <a href="{{ url('backend/tabel130') }}"><i class="fa fa-circle-o"></i> Tabel 1.30 Guest Lecturing</a>
                 </li>  
@@ -192,7 +204,9 @@
                                         
               </ul>
             </li>
+            @endrole
           </ul>
+          @role(['admin','informasi'])
           <ul class="treeview-menu">
             <li class="treeview">
               <a href="#">
@@ -229,6 +243,8 @@
 
             </li>
           </ul>
+          @endrole
+          @role(['admin','informasi'])
           <ul class="treeview-menu">
             <li class="treeview">
               <a href="#">
@@ -264,6 +280,8 @@
               </ul>
             </li>
           </ul>
+          @endrole
+          @role(['admin','informasi'])
           <ul class="treeview-menu">
             <li class="treeview">
               <a href="#">
@@ -295,9 +313,25 @@
               </ul>
             </li>
           </ul>
-
-              
-
+          @endrole
+          @role(['admin'])
+  
+            <li class="treeview">
+        <a href="#">
+          <i class="fa fa-cog"></i>
+          <span>Pengaturan</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{url('/backend/permission')}}"><i class="fa fa-circle-o"></i> Permissions</a></li>
+          <li><a href="{{url('/backend/role')}}"><i class="fa fa-circle-o"></i> Roles</a></li>
+          <li><a href="{{url('/backend/user')}}"><i class="fa fa-circle-o"></i> Users</a></li>
+          <li><a href="{{url('/backend/navigation-tree-view')}}"><i class="fa fa-circle-o"></i> Manajemen Menu</a></li>
+        </ul>
+      </li>  
+      @endrole
 
         </li>
       </ul>

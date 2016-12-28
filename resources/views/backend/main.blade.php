@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title','MyBlog')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -17,9 +18,11 @@
   <link rel="stylesheet" href="{{ asset('/backend/css/AdminLTE.min.css') }}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="{{ asset('/backend/css/skins/_all-skins.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/backend/css/skins/skin-blue.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/backend/css/selectize.css') }}">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{ asset('/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+  @yield('style')
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,6 +55,7 @@
 <script src="{{ asset('/backend/js/jquery-2.2.3.min.js') }}"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset('/backend/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/backend/js/selectize.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/backend/js/app.min.js') }}"></script>
 

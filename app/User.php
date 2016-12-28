@@ -42,4 +42,9 @@ class User extends Authenticatable
         return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
     }
 
+    public function fakultas()
+    {
+        return $this->belongsTo('App/Fakultas');
+    } 
+
 }

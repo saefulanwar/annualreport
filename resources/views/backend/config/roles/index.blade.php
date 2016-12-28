@@ -1,25 +1,25 @@
 @extends('backend.main')
 
-@section('title','Laporan Universitas | Daya Tampung List')
+@section('title','UNY REPORT | List data')
 
 @section('content')
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Dayatampung
-        <small>Display all dayatampung</small>
+      <h1>        
+      Roles User
+        <small>Display all data</small>
       </h1>
       <ol class="breadcrumb">
         <li>
         <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
         </li>
         <li>
-        <a href="{{ route('dayatampung.index') }}"> dayatampung</a>
+        <a href="{{ route('role.index') }}"> role</a>
         </li>
         <li class="active">
-        Display all daya tampung
+        Display all data
         </li>
       </ol>
     </section>
@@ -31,29 +31,28 @@
             <div class="box"> 
             <div class="box-header">
               <div class="pull-left">
-                <a href="{{ route('dayatampung.create') }}" class="btn btn-success"><i class="fa fa-pencil"></i> Add New</a>
-                <a href="{{ url('/backend/exportdytampung') }}" class="btn btn-info"><i class="fa fa-file-excel-o"></i> Export Data</a>
+                <a href="{{ route('role.create') }}" class="btn btn-success"><i class="fa fa-pencil"></i> Add New</a>
               </div>   
             </div>        
               <!-- /.box-header -->
               <div class="box-body ">
                @include('backend.partials.message')
 
-                    @if (! $dayatampung->count())
+                    @if (! $role->count())
                         <div class="alert alert-danger">
                             <strong>No record found</strong>
                         </div>
                     @else                       
-                        @include('backend.bidang1.dayatampung.table')
+                        @include('backend.config.roles.table')
                     @endif
               </div>
               <!-- /.box-body -->
               <div class="box-footer clearfix">
                 <div class="pull-left">
-                    {{ $dayatampung->links() }}
+                    {{ $role->links() }}
                 </div>
                 <div class="pull-right">
-                    <small>{{ $dayatampungCount }}{{ str_plural(' Item', $dayatampungCount) }}</small>
+                    <small>{{ $roleCount }}{{ str_plural(' Item', $roleCount) }}</small>
                 </div>
               </div>
             </div>

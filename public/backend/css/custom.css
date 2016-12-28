@@ -1,0 +1,16 @@
+li.tree-main {
+	font-size: 120%;
+}
+li.tree-view{
+	font-size: 90%;
+}
+
+.buttons, .buttons-second, .buttons-third{
+	width: 80px;
+	text-align: center;
+	display: none;
+}
+.tree-view:hover .buttons-third, .tree-view.closed.expandable:hover .buttons-second, .tree-view.closed.collapsable:hover .buttons-second, .tree-main:hover .buttons{
+	display: block;
+}
+

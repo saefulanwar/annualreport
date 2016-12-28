@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Bidang1\Tabel171
+use App\Bidang1\Tabel171;
 
 class Tabel171Controller extends BackendController
 {
